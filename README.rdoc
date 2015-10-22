@@ -9,7 +9,7 @@ This application is a service which a user can post some contents along with ima
 # Database creation(tables and the respective columns)
 ## users
 * name
-* group
+* member
 * profile
 * works
 * avatar
@@ -18,16 +18,17 @@ This application is a service which a user can post some contents along with ima
 * title
 * catch_copy
 * concept
-* tag
 * user_id
 
-## images
+## thumbnails
 * prototype_id
+* main_thumbnail
+* sub_thumbnails
 
 ## comments
 * prototype_id
 * user_id
-* comment
+* text
 
 ## tags
 * prototype_id
@@ -41,11 +42,9 @@ This application is a service which a user can post some contents along with ima
 * has many prototypes
 * has many comments
 * has many likes
-* has many tags
-* has many images
 
 ## prototype
 * has many comments
 * has many tags
 * has many likes
-* has many images
+* has many thumbnails
