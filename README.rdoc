@@ -1,28 +1,51 @@
-== README
+== PROTOSPACE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby version
+ruby 2.1.3
 
-Things you may want to cover:
+# Overview
+This application is a service which a user can post some contents along with images and tags, and other users can comment and like the posts.
 
-* Ruby version
+# Database creation(tables and the respective columns)
+## users
+* name
+* group
+* profile
+* works
+* avatar
 
-* System dependencies
+## prototypes
+* title
+* catch_copy
+* concept
+* tag
+* user_id
 
-* Configuration
+## images
+* prototype_id
 
-* Database creation
+## comments
+* prototype_id
+* user_id
+* comment
 
-* Database initialization
+## tags
+* prototype_id
 
-* How to run the test suite
+## likes
+* prototype_id
+* user_id
 
-* Services (job queues, cache servers, search engines, etc.)
+# Relations
+## user
+* has many prototypes
+* has many comments
+* has many likes
+* has many tags
+* has many images
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## prototype
+* has many comments
+* has many tags
+* has many likes
+* has many images
