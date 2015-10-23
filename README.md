@@ -24,8 +24,8 @@ This application is a service which a user can post some contents along with ima
 
 ## thumbnails
 * prototype_id
-* main_thumbnail
-* sub_thumbnails
+* image
+
 
 ## comments
 * prototype_id
