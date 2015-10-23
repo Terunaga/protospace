@@ -1,12 +1,13 @@
 == PROTOSPACE
 
 # Ruby version
-ruby 2.1.3
+* ruby 2.1.3
 
 # Overview
 This application is a service which a user can post some contents along with images and tags, and other users can comment and like the posts.
 
 # Database creation(tables and the respective columns)
+
 
 ## users
 * name
@@ -23,8 +24,9 @@ This application is a service which a user can post some contents along with ima
 
 ## thumbnails
 * prototype_id
-* main_thumbnail
-* sub_thumbnails
+* name
+* status
+
 
 ## comments
 * prototype_id
@@ -38,7 +40,9 @@ This application is a service which a user can post some contents along with ima
 * prototype_id
 * user_id
 
+
 # Relations
+
 ## user
 * has many prototypes
 * has many comments
