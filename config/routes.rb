@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   resources :ranking, only: :index
   resources :user, only: [:index, :show, :new, :edit, :create, :update]
 
-  get  '/login'             =>    'login#index'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
