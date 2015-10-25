@@ -4,14 +4,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'top#index'
+  root 'prototypes#index'
 
-  get  '/top'               =>    'top#index'
-  get  '/proto'             =>    'proto#index'
-  get  '/proto/new'         =>    'proto#new'
-  get  '/user'              =>    'user#index'
-  get  '/user/new'          =>    'user#new'
-  get  '/user/edit'         =>    'user#edit'
+  resources :prototypes, only: [:show, :new]
+  resources :ranking, only: :index
+  resources :user, only: [:index, :show, :new, :edit, :create, :update]
+
   get  '/login'             =>    'login#index'
 
   # Example of regular route:
