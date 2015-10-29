@@ -4,15 +4,13 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    = link_to "= image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px")", '/', class: "navbar-brand"
+    = link_to image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px"), '/', class: "navbar-brand"
     .navbar-collapse.collapse.navbar-responsive-collapse
-      //not login
       %ul.nav.navbar-nav.navbar-right
         %li
           .btn.btn-primary.navbar-btn
             = link_to 'Get Started', '/login'
-/ deviseを作ったら、リンクを作り直す
-      //login
+
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{aria: {expanded: "false"}, data: {toggle: "dropdown"}, href: "#", role: "button"}
