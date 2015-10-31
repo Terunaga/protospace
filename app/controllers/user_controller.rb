@@ -1,24 +1,15 @@
 class UserController < ApplicationController
 
-  def index
-  end
-
-  def new
+  def show
+    @user = User.find(params[:id])
   end
 
   def edit
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
-
   def update
     current_user.update(update_params)
     redirect_to controller: :prototypes, action: :index
-  end
-
-  def create
   end
 
   private
