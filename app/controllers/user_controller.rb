@@ -10,6 +10,7 @@ class UserController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def update
@@ -22,7 +23,7 @@ class UserController < ApplicationController
 
   private
   def update_params
-    params.require(:user).permit(:username, :email, :member, :profile, :works)
+    params.require(:user).permit(:username, :email, :member, :profile, :works, :avatar)
   end
 
 end
