@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, ImageUploader
 
   has_many :prototypes
+
+  accepts_nested_attributes_for :prototypes
 end
 
