@@ -10,6 +10,5 @@ class User < ActiveRecord::Base
 
   has_many :prototypes
 
-  accepts_nested_attributes_for :prototypes
 end
 
