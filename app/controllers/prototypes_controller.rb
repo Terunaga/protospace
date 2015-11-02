@@ -13,13 +13,17 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    Prototype.create(create_params)
-    redirect_to :root and return
+    @prototype = current_user.prototypes.new(create_params)
+    if @prototype.save
+      redirect_to :root and return
+    else
+      redirect_to action: :new
+    end
   end
 
   private
   def create_params
-    params.require(:prototype).require(:prototypes).permit(:title, :catch_copy, :concept).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catch_copy, :concept)
   end
 end
 
