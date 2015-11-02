@@ -8,7 +8,7 @@
             .user-name.col-md-10
               = f.text_field :username, placeholder: "Username"
             .user-image.col-md-2
-              %button.btn.btn-primary Add image
+              = button_tag "Add image", class: "btn btn-primary"
               = f.file_field :avatar, type: "file"
           = f.email_field :email, class: "user-email", placeholder: "E-Mail", autofocus: "", type: "email", id: "user_email"
           = f.password_field :password, class: "user-password", placeholder: "Password", autocomplete: "off", type: "password", id: "user_password"
