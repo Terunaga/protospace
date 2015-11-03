@@ -7,15 +7,18 @@
       .row
         .col-md-12
           .cover-image-upload
-            %input{type: "file"}/
+            = f.fields_for :thumbnails do |t|
+              = t.file_field :name
         .col-md-12
           %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              .image-upload
-                %input{type: "file"}/
-            %li.list-group-item.col-md-4
-              .image-upload
-                %input{type: "file"}/
+            = f.fields_for :thumbnails do |t|
+              %li.list-group-item.col-md-4
+                .image-upload
+                  = t.file_field :name
+            = f.fields_for :thumbnails do |t|
+              %li.list-group-item.col-md-4
+                .image-upload
+                  = t.file_field :name
             %li.list-group-item.col-md-4
               .image-upload-plus
                 %span +
