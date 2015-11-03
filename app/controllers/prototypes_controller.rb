@@ -10,20 +10,22 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
+    @prototype.thumbnails.build
   end
 
   def create
+    binding.pry
     @prototype = current_user.prototypes.new(create_params)
     if @prototype.save
       redirect_to :root and return
     else
-      redirect_to action: :new
+      render action: :new
     end
   end
 
   private
   def create_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept)
+    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:name])
   end
 end
 
