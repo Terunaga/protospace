@@ -23,10 +23,10 @@
       %ul.proto-sub-list.list-group
         - if @prototype.first_thumbnail
           %li.list-group-item
-            = image_tag(@prototype.thumbnails.sub.first.name, class: "img-responsive")
+            = image_tag(@prototype.show_first_thumbnail, class: "img-responsive")
         - if @prototype.second_thumbnail
           %li.list-group-item
-            = image_tag(@prototype.thumbnails.sub.second.name, class: 'img-responsive')
+            = image_tag(@prototype.show_second_thumbnail, class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
