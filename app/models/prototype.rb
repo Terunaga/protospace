@@ -7,7 +7,6 @@ class Prototype < ActiveRecord::Base
 
   validates_presence_of :title, :catch_copy, :concept
 
-
   def main_thumbnail
     thumbnails.main.first.name
   end
@@ -18,6 +17,14 @@ class Prototype < ActiveRecord::Base
 
   def second_thumbnail
     thumbnails.sub.second.name?
+  end
+
+  def show_first_thumbnail
+    thumbnails.sub.first.name
+  end
+
+  def show_second_thumbnail
+    thumbnails.sub.second.name
   end
 end
 
