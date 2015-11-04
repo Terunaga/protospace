@@ -24,7 +24,7 @@ class PrototypesController < ApplicationController
 
   private
   def create_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:name, :status])
+    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:name, :status, :prototype_id])
   end
 end
 
