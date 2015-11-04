@@ -1,11 +1,11 @@
 class PrototypesController < ApplicationController
 
   def index
-    @prototypes = Prototype.all
+    @prototypes = Prototype.includes(:thumbnails)
   end
 
   def show
-    @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.includes(:thumbnails).find(params[:id])
   end
 
   def new
