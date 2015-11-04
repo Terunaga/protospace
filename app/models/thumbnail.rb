@@ -3,7 +3,7 @@ class Thumbnail < ActiveRecord::Base
 
   mount_uploader :name, ImageUploader
 
-  validates_presence_of :name
+  # validates_presence_of :name
 
   enum status: [:main, :sub]
 end
