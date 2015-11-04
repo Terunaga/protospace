@@ -21,12 +21,12 @@
       = image_tag(@prototype.main_thumbnail, class: "img-responsive")
     .col-md-3
       %ul.proto-sub-list.list-group
-        - if @prototype.first_thumbnail
+        - if @prototype.first_thumbnail?
           %li.list-group-item
-            = image_tag(@prototype.show_first_thumbnail, class: "img-responsive")
-        - if @prototype.second_thumbnail
+            = image_tag(@prototype.first_thumbnail, class: "img-responsive")
+        - if @prototype.second_thumbnail?
           %li.list-group-item
-            = image_tag(@prototype.show_second_thumbnail, class: 'img-responsive')
+            = image_tag(@prototype.second_thumbnail, class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
