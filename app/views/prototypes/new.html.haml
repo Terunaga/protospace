@@ -7,15 +7,17 @@
       .row
         .col-md-12
           .cover-image-upload
-            %input{type: "file"}/
+            = f.fields_for :thumbnails do |t|
+              = t.file_field :name
+              = t.hidden_field :status, value: :main
         .col-md-12
           %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              .image-upload
-                %input{type: "file"}/
-            %li.list-group-item.col-md-4
-              .image-upload
-                %input{type: "file"}/
+            - 2.times do
+              = f.fields_for :thumbnails do |t|
+                %li.list-group-item.col-md-4
+                  .image-upload
+                    = t.file_field :name
+                    = t.hidden_field :status, value: :sub
             %li.list-group-item.col-md-4
               .image-upload-plus
                 %span +
