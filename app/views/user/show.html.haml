@@ -26,7 +26,7 @@
           = button_tag "ACTION", class: "btn btn-default dropdown-toggle", data: {toggle: "dropdown"}, id: "dropdownMenu", aria: {expanded: "false"}, type: "button", name: nil
           %ul.dropdown-menu{aria: {labelledby: "dropdownMenu1"}}
             %li
-              = link_to "Delete", "#", method: :delete, rel: "nofollow", data: {method: "delete"}
+              = link_to "Delete", "/prototypes/#{prototype.id}", method: :delete, rel: "nofollow", data: {method: "delete"}
             %li
               = link_to "Edit", edit_prototype_path(prototype)
         .thumbnail
