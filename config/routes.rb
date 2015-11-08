@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'prototypes#index'
 
-  resources :prototypes, only: [:show, :new, :create]
+  resources :prototypes, only: [:show, :new, :create, :edit, :update]
   resources :ranking, only: :index
   resources :user, only: [:show, :edit, :update]
 
