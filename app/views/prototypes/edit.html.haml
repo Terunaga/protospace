@@ -7,13 +7,13 @@
       .row
         .col-md-12
           .cover-image-upload
-            = f.fields_for :thumbnails do |t|
+            = f.fields_for :thumbnails, @prototype.thumbnails.main do |t|
               = t.file_field :name
               = t.hidden_field :status, value: :main
         .col-md-12
           %ul.proto-sub-list.list-group
             - 2.times do
-              = f.fields_for :thumbnails do |t|
+              = f.fields_for :thumbnails, @prototype.thumbnails.sub do |t|
                 %li.list-group-item.col-md-4
                   .image-upload
                     = t.file_field :name
