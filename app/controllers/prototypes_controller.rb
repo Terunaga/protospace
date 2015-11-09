@@ -1,5 +1,7 @@
 class PrototypesController < ApplicationController
 
+  before_action :set_prototype, only: [:edit, :update, :destroy]
+
   def index
     @prototypes = Prototype.includes(:thumbnails)
   end
@@ -22,9 +24,30 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @prototype.update(update_params)
+    redirect_to :root
+  end
+
+  def destroy
+    @prototype.destroy
+    redirect_to :root
+  end
+
   private
   def create_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:name, :status, :prototype_id])
+    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:name, :status])
+  end
+
+  def update_params
+    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:id, :name, :status])
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 end
 

@@ -1,7 +1,7 @@
 class Prototype < ActiveRecord::Base
   belongs_to :user
 
-  has_many :thumbnails
+  has_many :thumbnails, dependent: :destroy
 
   accepts_nested_attributes_for :thumbnails
 
@@ -17,6 +17,14 @@ class Prototype < ActiveRecord::Base
 
   def second_thumbnail
     thumbnails.sub.second.name
+  end
+
+  def main_thumbnails
+    thumbnails.main
+  end
+
+  def sub_thumbnails
+    thumbnails.sub
   end
 end
 
