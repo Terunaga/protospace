@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
 
-  before_action :common_code, only: [:edit, :update, :destroy]
+  before_action :set_prototype, only: [:edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.includes(:thumbnails)
@@ -28,7 +28,6 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    binding.pry
     @prototype.update(update_params)
     redirect_to :root
   end
@@ -44,10 +43,10 @@ class PrototypesController < ApplicationController
   end
 
   def update_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:name, :status])
+    params.require(:prototype).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:id, :name, :status])
   end
 
-  def common_code
+  def set_prototype
     @prototype = Prototype.find(params[:id])
   end
 end
