@@ -19,11 +19,11 @@ class Prototype < ActiveRecord::Base
     thumbnails.sub.second.name
   end
 
-  def edit_main_thumbnail
+  def main_thumbnails
     thumbnails.main
   end
 
-  def edit_sub_thumbnail
+  def sub_thumbnails
     thumbnails.sub
   end
 end
