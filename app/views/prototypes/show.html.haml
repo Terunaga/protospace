@@ -12,10 +12,21 @@
             %span.degree= "#{@prototype.user.profile} #{@prototype.user.works}"
 
     .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+      - if @like
+        = link_to like_path(@like), method: :delete do
+          %button.btn.btn-default
+            =image_tag("icon_heart.svg")
+            Like
+            %span.num
+              = @likes.count
+      - else
+        = link_to likes_path(@prototype), method: :post do
+          %button.btn.btn-default
+            =image_tag("icon_heart.svg")
+            Like
+            %span.num
+              = @likes.count
+
   .row
     .col-md-9
       = image_tag(@prototype.main_thumbnail, class: "img-responsive")
