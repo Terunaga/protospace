@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :ranking, only: :index
   resources :user, only: [:show, :edit, :update]
+  resources :likes, only: [:create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
