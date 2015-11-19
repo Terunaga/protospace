@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'prototypes#index'
-
-  resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :ranking, only: :index
   resources :user, only: [:show, :edit, :update]
-  resources :likes, only: [:create, :destroy]
+  resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy] do
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: :create
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
