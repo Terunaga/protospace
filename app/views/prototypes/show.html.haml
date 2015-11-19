@@ -11,22 +11,8 @@
             = link_to "by #{@prototype.user.username}", user_path(@prototype.user_id)
             %span.degree= "#{@prototype.user.profile} #{@prototype.user.works}"
 
-    .col-md-6.text-right
-      - if @like
-        = link_to prototype_like_path(@prototype, @like), method: :delete do
-          %button.btn.btn-default
-            =image_tag("icon_heart.svg")
-            Like
-            %span.num
-              = @likes.count
-      - else
-        = link_to prototype_likes_path(@prototype), method: :post do
-          %button.btn.btn-default
-            =image_tag("icon_heart.svg")
-            Like
-            %span.num
-              = @likes.count
-
+    %div{class: "col-md-6 text-right", id: "like-link"}
+      = render partial: "likes/like"
   .row
     .col-md-9
       = image_tag(@prototype.main_thumbnail, class: "img-responsive")
