@@ -13,14 +13,14 @@
 
     .col-md-6.text-right
       - if @like
-        = link_to like_path(@like), method: :delete do
+        = link_to prototype_like_path(@prototype, @like), method: :delete do
           %button.btn.btn-default
             =image_tag("icon_heart.svg")
             Like
             %span.num
               = @likes.count
       - else
-        = link_to likes_path(@prototype), method: :post do
+        = link_to prototype_likes_path(@prototype), method: :post do
           %button.btn.btn-default
             =image_tag("icon_heart.svg")
             Like
