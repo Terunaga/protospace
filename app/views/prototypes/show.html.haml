@@ -10,8 +10,7 @@
           .proto-user
             = link_to "by #{@prototype.user.username}", user_path(@prototype.user_id)
             %span.degree= "#{@prototype.user.profile} #{@prototype.user.works}"
-
-    %div{class: "col-md-6 text-right", id: "like-link"}
+    .col-md-6.text-right{id: "like-link"}
       = render partial: "likes/like"
   .row
     .col-md-9
