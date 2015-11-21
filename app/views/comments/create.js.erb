@@ -1,0 +1,4 @@
+$("#comment_text").val("");
+$("span.num").html('(<%= @comments.count %>)');
+$("#comment-link").html('<%= j(render partial: "comments/comment", collection: @comments) %>');
+
