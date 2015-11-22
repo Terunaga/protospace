@@ -3,8 +3,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :update, :destroy]
 
   def index
-    prototype_ids = Like.group(:prototype_id).order('count_prototype_id DESC').count(:prototype_id).keys
-    @prototypes = prototype_ids.map{|id| Prototype.find(id)}
+    @prototypes = Prototype.includes(:thumbnails).order('likes_count DESC')
   end
 
   def newest
