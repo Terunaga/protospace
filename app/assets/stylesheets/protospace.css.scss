@@ -1,6 +1,38 @@
 /* -- import Roboto Font ------------------------------ */
 @import "//fonts.googleapis.com/css?family=Lato:300,400,700";
 
+/* -- Tag vie page */
+
+.tags-list {
+  h2{
+    font-weight: 100;
+    margin-bottom: 20px;
+  }
+  ul{
+    overflow: hidden;
+    padding: 0;
+    margin: 30px, 0;
+    list-style: none;
+  }
+  li{
+    margin-bottom: 10px;
+    list-style: none;
+    a{
+      display: block;
+      text-align: left;
+      padding: 20px;
+      border-radius: 3px;
+
+      &:hover{
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(103, 171, 250, 0.2);
+        color: #67ABFA;
+      }
+    }
+  }
+}
+
+
 /*-- Body style ---------------------------------- */
 body {
   font-family: "Lato", 'Helvetica Neue, Helvetica, Arial', sans-serif;
