@@ -1,3 +1,4 @@
 class Tag < ActiveRecord::Base
   belongs_to :prototype
+  belongs_to :user
 end

@@ -9,7 +9,9 @@ class Prototype < ActiveRecord::Base
 
   validates_presence_of :title, :catch_copy, :concept
 
-  acts_as_taggable_on :prototypes
+  acts_as_taggable
+
+  acts_as_ordered_taggable_on :prototypes
 
   def main_thumbnail
     thumbnails.main.first.name
