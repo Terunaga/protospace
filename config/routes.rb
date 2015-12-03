@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'prototypes#index'
-  resources :ranking, only: :index
+  resources :tags, only: [:index, :show]
   resources :user, only: [:show, :edit, :update]
   resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :likes, only: [:create, :destroy]
