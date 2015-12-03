@@ -9,7 +9,7 @@
           = link_to "Popular PROTO", root_path
         %li.active{role: "presentation"}
           = link_to "Newest PROTO", newest_prototypes_path
-      = button_tag "View Tags", class: "btn btn-default col-lg-1", type: "button", name: "button"
+      = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1", type: "button", name: "button"
 .container.proto-list
   .row
     = render partial: "prototype", collection: @prototypes
