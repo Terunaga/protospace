@@ -15,14 +15,18 @@
   .row
     .col-md-9
       = image_tag(@prototype.main_thumbnail, class: "img-responsive")
-    .col-md-3
-      %ul.proto-sub-list.list-group
-        - if @prototype.first_thumbnail
-          %li.list-group-item
-            = image_tag(@prototype.first_thumbnail, class: "img-responsive")
-        - if @prototype.second_thumbnail
-          %li.list-group-item
-            = image_tag(@prototype.second_thumbnail, class: 'img-responsive')
+    - if @prototype.first_thumbnail.present?
+      .col-md-3
+        %ul.proto-sub-list.list-group
+          - if @prototype.first_thumbnail.present?
+            %li.list-group-item
+              = image_tag(@prototype.first_thumbnail, class: "img-responsive")
+          - if @prototype.second_thumbnail.present?
+            %li.list-group-item
+              = image_tag(@prototype.second_thumbnail, class: 'img-responsive')
+          - if @prototype.third_thumbnail.present?
+            %li.list-group-item
+              = image_tag(@prototype.third_thumbnail, class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
