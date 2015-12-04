@@ -3,7 +3,7 @@
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
-          = f.text_field :title, placeholder: "Title", type: "text", class: "proto-new-title"
+          = f.text_field :title, placeholder: "Title", type: "text", class: "proto-new-title", required: true
       .row
         .col-md-12
           .cover-image-upload
@@ -22,8 +22,8 @@
               .image-upload-plus
                 %span +
       .row.proto-description
-        = f.text_field :catch_copy, placeholder: "Catch Copy", type: "text", class: "col-md-12"
-        = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4", class: "col-md-12"
+        = f.text_field :catch_copy, placeholder: "Catch Copy", type: "text", class: "col-md-12", required: true
+        = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4", class: "col-md-12", required: true
         .col-md-12
           %h4 Tag List
           .row
