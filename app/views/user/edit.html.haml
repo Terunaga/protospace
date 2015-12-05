@@ -9,7 +9,8 @@
               = f.text_field :username, placeholder: "Username"
             .user-image.col-md-2{style: 'background-image: url();'}
               = button_tag "Change image", class: "btn btn-primary"
-              = f.file_field :avatar, type: "file"
+              = f.file_field :avatar, type: "file", id: "avatar"
+              %img{src: "", id: "avatar-preview", style: "display:none;"}
           = f.email_field :email, class: "user-email", placeholder: "E-Mail"
           = f.password_field :password, class: "user-password", placeholder: "Password"
         .col-md-12

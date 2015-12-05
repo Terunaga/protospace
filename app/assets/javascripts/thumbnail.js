@@ -66,5 +66,39 @@ $(window).on("page:change", function(){
     }
     );
   });
+
+  $("#avatar").on("click", function(){
+    $("#avatar").change(
+    function() {
+    if ( !this.files.length ) {
+        return;
+    }
+
+    var file = $(this).prop('files')[0];
+    var file_reader = new FileReader();
+    file_reader.onload = function() {
+        $("#avatar-preview").attr('src', file_reader.result ).css('display','inline');
+    }
+    file_reader.readAsDataURL(file);
+    }
+    );
+  });
+
+  $("#first-avatar").on("click", function(){
+    $("#first-avatar").change(
+    function() {
+    if ( !this.files.length ) {
+        return;
+    }
+
+    var file = $(this).prop('files')[0];
+    var file_reader = new FileReader();
+    file_reader.onload = function() {
+        $("#first-avatar-preview").attr('src', file_reader.result ).css('display','inline');
+    }
+    file_reader.readAsDataURL(file);
+    }
+    );
+  });
 });
 
