@@ -8,20 +8,25 @@
         .col-md-12
           .cover-image-upload
             = f.fields_for :thumbnails do |t|
-              = t.file_field :name
+              = t.file_field :name, id: "main-file"
+              %img{src: "", id: "main-preview", style: "display:none;"}
               = t.hidden_field :status, value: :main
         .col-md-12
           %ul.proto-sub-list.list-group
+            - i = 0
             - 2.times do
               = f.fields_for :thumbnails do |t|
                 %li.list-group-item.col-md-4
                   .image-upload
-                    = t.file_field :name
+                    = t.file_field :name, id: "sub-file#{i}"
+                    %img{src: "", id: "sub-preview#{i}", style: "display:none;"}
                     = t.hidden_field :status, value: :sub
+                    - i = i + 1
             = f.fields_for :thumbnails do |t|
               %li.list-group-item.col-md-4#hide-form
                 .image-upload
-                  = t.file_field :name
+                  = t.file_field :name, id: "sub-file2"
+                  %img{src: "", id: "sub-preview2", style: "display:none;"}
                   = t.hidden_field :status, value: :sub
             %li.list-group-item.col-md-4#show-form
               .image-upload-plus
