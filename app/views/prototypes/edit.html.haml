@@ -18,7 +18,13 @@
                   .image-upload
                     = t.file_field :name
                     = t.hidden_field :status, value: :sub
-            %li.list-group-item.col-md-4
+
+            = f.fields_for :thumbnails do |t|
+              %li.list-group-item.col-md-4#hide-form
+                .image-upload
+                  = t.file_field :name
+                  = t.hidden_field :status, value: :sub
+            %li.list-group-item.col-md-4#show-form
               .image-upload-plus
                 %span +
       .row.proto-description

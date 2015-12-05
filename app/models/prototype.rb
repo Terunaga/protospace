@@ -25,6 +25,10 @@ class Prototype < ActiveRecord::Base
     thumbnails.sub.second.name
   end
 
+  def third_thumbnail
+    thumbnails.sub.third.name
+  end
+
   def main_thumbnails
     thumbnails.main
   end

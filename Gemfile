@@ -32,6 +32,7 @@ gem 'carrierwave'
 gem 'pry-rails'
 gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
