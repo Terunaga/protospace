@@ -1,6 +1,16 @@
 /* -- import Roboto Font ------------------------------ */
 @import "//fonts.googleapis.com/css?family=Lato:300,400,700";
 
+/* -- Prototype new page thumbnail upload*/
+#main-preview{
+  width: 730px;
+  height: 500px
+}
+#sub-preview0, #sub-preview1, #sub-preview2{
+  width: 213.328px;
+  height: 200px
+}
+
 /* -- Prototype new page */
 #hide-form{
   display: none;
