@@ -7,11 +7,11 @@ $(window).on("page:change", function(){
     }
 
     var file = $(this).prop('files')[0];
-    var fr = new FileReader();
-    fr.onload = function() {
-        $('#main-preview').attr('src', fr.result ).css('display','inline');
+    var file_reader = new FileReader();
+    file_reader.onload = function() {
+        $('#main-preview').attr('src', file_reader.result ).css('display','inline');
     }
-    fr.readAsDataURL(file);
+    file_reader.readAsDataURL(file);
     }
     );
   });
@@ -24,11 +24,11 @@ $(window).on("page:change", function(){
     }
 
     var file = $(this).prop('files')[0];
-    var fr = new FileReader();
-    fr.onload = function() {
-        $("#sub-preview0").attr('src', fr.result ).css('display','inline');
+    var file_reader = new FileReader();
+    file_reader.onload = function() {
+        $("#sub-preview0").attr('src', file_reader.result ).css('display','inline');
     }
-    fr.readAsDataURL(file);
+    file_reader.readAsDataURL(file);
     }
     );
   });
@@ -41,11 +41,11 @@ $(window).on("page:change", function(){
     }
 
     var file = $(this).prop('files')[0];
-    var fr = new FileReader();
-    fr.onload = function() {
-        $("#sub-preview1").attr('src', fr.result ).css('display','inline');
+    var file_reader = new FileReader();
+    file_reader.onload = function() {
+        $("#sub-preview1").attr('src', file_reader.result ).css('display','inline');
     }
-    fr.readAsDataURL(file);
+    file_reader.readAsDataURL(file);
     }
     );
   });
@@ -58,11 +58,11 @@ $(window).on("page:change", function(){
     }
 
     var file = $(this).prop('files')[0];
-    var fr = new FileReader();
-    fr.onload = function() {
-        $('#sub-preview2').attr('src', fr.result ).css('display','inline');
+    var file_reader = new FileReader();
+    file_reader.onload = function() {
+        $('#sub-preview2').attr('src', file_reader.result ).css('display','inline');
     }
-    fr.readAsDataURL(file);
+    file_reader.readAsDataURL(file);
     }
     );
   });
