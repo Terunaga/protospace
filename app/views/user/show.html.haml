@@ -7,7 +7,7 @@
         %h4#top-aligned-media.media-heading
           = @user.username
           %span.label.label-default.project-number
-            29
+            = @user.prototypes.count
             %i Projects
         .proto-user
           %span.degree= @user.member
@@ -21,24 +21,5 @@
 .container.proto-list
   .row
     = render partial: "prototype", collection: @user.prototypes
-.text-center
-  %ul.pagination
-    %li.disabled
-      %a{aria: {label: "Previous"}, href: "#"}
-        %span{aria: {hidden: "true"}} «
-    %li.active
-      %a{href: "#"}
-        1
-        %span.sr-only (current)
-    %li
-      = link_to "2", "#"
-    %li
-      = link_to "3", "#"
-    %li
-      = link_to "4", "#"
-    %li
-      = link_to "5", "#"
-    %li
-      %a{aria: {label: "Next"}, href: "#"}
-        %span{aria: {hidden: "true"}} »
+
 

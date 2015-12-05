@@ -1,6 +1,33 @@
 /* -- import Roboto Font ------------------------------ */
 @import "//fonts.googleapis.com/css?family=Lato:300,400,700";
 
+
+footer p{
+  text-align: center;
+}
+/* -- pagination */
+.pagination{
+  span{
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #333ab7;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+  }
+  .current{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+    cursor: default;
+  }
+}
+
+
+
 /* -- Prototype new page thumbnail upload*/
 #main-preview{
   width: 730px;
@@ -9,6 +36,13 @@
 #sub-preview0, #sub-preview1, #sub-preview2{
   width: 213.328px;
   height: 200px;
+}
+#avatar-preview, #first-avatar-preview{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin-left: -17px;
+  margin-top: -2px;
 }
 
 /* -- Prototype new page */
