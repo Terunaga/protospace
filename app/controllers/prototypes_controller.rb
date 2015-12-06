@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
 
   before_action :set_prototype, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     @prototypes = Prototype.includes(:thumbnails).order('likes_count DESC').page(params[:page])
@@ -12,7 +13,7 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.includes(:thumbnails).find(params[:id])
-    @like = Like.find_by(user_id: current_user.id, prototype_id: params[:id])
+    @like = Like.find_by(user_id: @prototype.user_id, prototype_id: params[:id])
     @likes = Like.where(prototype_id: params[:id])
     @comment = Comment.new
     @comments = Comment.where(prototype_id: params[:id]).order('created_at ASC')
@@ -33,6 +34,9 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    unless @prototype.user_id == current_user.id
+      redirect_to :root
+    end
   end
 
   def update
