@@ -3,11 +3,11 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.includes(:thumbnails).order('likes_count DESC').page(params[:page]).per(4)
+    @prototypes = Prototype.includes(:thumbnails).order('likes_count DESC').page(params[:page])
   end
 
   def newest
-    @prototypes = Prototype.includes(:thumbnails).order('created_at DESC').page(params[:page]).per(5)
+    @prototypes = Prototype.includes(:thumbnails).order('created_at DESC').page(params[:page])
   end
 
   def show
