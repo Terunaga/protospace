@@ -13,6 +13,8 @@ class Prototype < ActiveRecord::Base
 
   acts_as_ordered_taggable_on :prototypes
 
+  paginates_per 20
+
   def main_thumbnail
     thumbnails.main.first.name
   end
