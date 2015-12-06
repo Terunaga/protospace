@@ -1,12 +1,13 @@
 .col-sm-4.col-md-3.proto-content.eachbox
-  - if each_tag.user_id == current_user.id
-    .dropdown.drop_menu_location
-      = button_tag "ACTION", class: "btn btn-default dropdown-toggle", data: {toggle: "dropdown"}, id: "dropdownMenu", aria: {expanded: "false"}, type: "button", name: nil
-      %ul.dropdown-menu{aria: {labelledby: "dropdownMenu1"}}
-        %li
-          = link_to "Delete", "/prototypes/#{each_tag.id}", method: :delete, rel: "nofollow", data: {method: "delete"}
-        %li
-          = link_to "Edit", edit_prototype_path(each_tag)
+  - if user_signed_in?
+    - if each_tag.user_id == current_user.id
+      .dropdown.drop_menu_location
+        = button_tag "ACTION", class: "btn btn-default dropdown-toggle", data: {toggle: "dropdown"}, id: "dropdownMenu", aria: {expanded: "false"}, type: "button", name: nil
+        %ul.dropdown-menu{aria: {labelledby: "dropdownMenu1"}}
+          %li
+            = link_to "Delete", "/prototypes/#{each_tag.id}", method: :delete, rel: "nofollow", data: {method: "delete"}
+          %li
+            = link_to "Edit", edit_prototype_path(each_tag)
   .thumbnail
     = link_to image_tag(each_tag.main_thumbnail), prototype_path(each_tag)
     .caption

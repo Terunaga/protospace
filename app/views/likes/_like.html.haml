@@ -1,15 +1,22 @@
-- if @like.present?
-  = link_to prototype_like_path(@prototype, @like), method: :delete, remote: true do
-    %button.btn.btn-default
-      =image_tag("icon_heart.svg")
-      Like
-      %span.num
-        = @likes.count
+- if user_signed_in?
+  - if @like.present?
+    = link_to prototype_like_path(@prototype, @like), method: :delete, remote: true do
+      %button.btn.btn-default
+        =image_tag("icon_heart.svg")
+        Like
+        %span.num
+          = @likes.count
+  - else
+    = link_to prototype_likes_path(@prototype), method: :post, remote: true do
+      %button.btn.btn-default
+        =image_tag("icon_heart.svg")
+        Like
+        %span.num
+          = @likes.count
 - else
-  = link_to prototype_likes_path(@prototype), method: :post, remote: true do
+  = link_to new_user_session_path do
     %button.btn.btn-default
       =image_tag("icon_heart.svg")
       Like
       %span.num
         = @likes.count
-
