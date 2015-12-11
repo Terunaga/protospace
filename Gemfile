@@ -36,6 +36,7 @@ gem 'jquery-turbolinks'
 gem 'kaminari'
 gem 'fog'
 gem 'aws-sdk'
+gem 'config'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
